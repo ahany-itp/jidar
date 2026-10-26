@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert, Image } from 'react-native';
 import { api } from '../api/client';
 import { useAppStore } from '../store/useAppStore';
 
@@ -27,9 +27,13 @@ export function LoginScreen({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Jidar</Text>
+      {/* Replaced Text title with Image Logo */}
+      <Image 
+        source={require('../../assets/Logo.png')} 
+        style={styles.logo} 
+        resizeMode="contain" 
+      />
       <Text style={styles.subtitle}>Sign in to your property portal</Text>
-
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -59,8 +63,11 @@ export function LoginScreen({ navigation }: any) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F8FAFC', justifyContent: 'center', padding: 24 },
-  title: { fontSize: 32, fontWeight: '800', color: '#00A36C', textAlign: 'center' },
+  // Add this logo style:
+  logo: { width: 220, height: 96, alignSelf: 'center', marginBottom: 12 },
   subtitle: { fontSize: 16, color: '#6B7280', textAlign: 'center', marginBottom: 32 },
+  // ... rest of the styles
+  title: { fontSize: 32, fontWeight: '800', color: '#00A36C', textAlign: 'center' },
   input: { backgroundColor: '#FFF', height: 56, borderRadius: 14, borderWidth: 1, borderColor: '#E5E7EB', paddingHorizontal: 16, marginBottom: 16 },
   button: { backgroundColor: '#00A36C', height: 56, borderRadius: 14, justifyContent: 'center', alignItems: 'center', marginBottom: 16 },
   btnText: { color: '#FFF', fontSize: 16, fontWeight: '700' },
