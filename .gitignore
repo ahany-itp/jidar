@@ -1,0 +1,13 @@
+# Node/Expo (Frontend)
+node_modules/
+.expo/
+npm-debug.log
+
+# Python/Django (Backend)
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+
+# macOS
+.DS_Store
