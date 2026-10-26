@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useAppStore } from '../store/useAppStore';
 
 // Update this with your Mac Wi-Fi IP (ipconfig getifaddr en0)
-const BASE_URL = 'http://192.168.1.15:8000';
+const BASE_URL = 'http://192.168.110.49:8000';
 
 export const api = axios.create({
   baseURL: BASE_URL,
